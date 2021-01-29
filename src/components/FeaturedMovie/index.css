@@ -10,7 +10,13 @@
 .featured--horizontal{
     width: inherit;
     height: inherit;
-    background: linear-gradient(to right, #111 30%, transparent 70%); 
+    background: linear-gradient(to right, #111 30%, transparent 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    padding-bottom: 150px;
+    padding-top: 70px;
 }
 
 .featured--name{
@@ -43,10 +49,12 @@
 
   .featured--buttons{
       margin-top: 15px;
+      
   }
 
   .featured--watchbutton,
   .featured--mylistbutton{
+    margin-top: 15px;
     display: inline-block;
     font-size: 20px;
     font-weight: bold;
@@ -54,6 +62,12 @@
     border-radius: 5px;
     text-decoration: none;
     margin-right: 10px;
+    opacity: 1;
+    transition: all ease 0.2s;
+}
+.featured--watchbutton:hover,
+.featured--mylistbutton:hover{
+    opacity: 0.7;
 }
 
   .featured--watchbutton{
@@ -64,4 +78,10 @@
   .featured--mylistbutton{
     background-color: #333;
     color: #FFF;
+  }
+
+  .featured--genres{
+      margin-top:15px;
+      font-size: 18px;
+      color: #999;
   }

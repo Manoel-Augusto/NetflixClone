@@ -1,6 +1,5 @@
 import React from 'react';
-import './FeaturedMovie.css';
-
+import '../FeaturedMovie/index.css'
 export default ({item})=>{
     console.log(item);
 
