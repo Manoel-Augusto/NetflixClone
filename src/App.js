@@ -10,6 +10,9 @@ export default () => {
 
   const[featuredData, setFeaturedData]=useState(null);
 
+  const [balckHeader, setBlackHeader]=useState(false);
+  
+
   useEffect(() => {
     const loadAll = async () => {
       // Pegando a lista total
@@ -26,9 +29,23 @@ export default () => {
     loadAll();
   }, []);
 
+  useEffect(()=>{
+    const scrollListener = ()=>{
+if(window.scrollY>30){
+  setBlackHeader(true);
+} else {
+  setBlackHeader(false);
+}
+    }
+    window.addEventListener('scroll', scrollListener);
+    return()=>{
+window.removeEventListener('scroll', scrollListener);
+    }
+  },[])
+
   return (
     <div className='page'>
-      <Header/>
+      <Header black={balckHeader}/>
       { featuredData && 
       <FeaturedMovie item={featuredData}/>
       }
